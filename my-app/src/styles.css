@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"); 
+body{
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+}
+.basic-view-background {
+    background: #7b4397;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #dc2430, #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.capa{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.api-client-view-background {
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+/* Estilos para WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 3px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #300247; /* Color del thumb (barra) */
+    border-radius: 7px; /* Borde redondeado */
+}
+
+/* Estilos para Firefox */
+/* No hay soporte para cambiar el color del thumb en Firefox */
+
+/* Estilos comunes */
+/* Puedes añadir estilos comunes para ambos navegadores aquí */
+::-webkit-scrollbar-track {
+    background-color: rgba(29, 14, 39, 0.566); /* Color de fondo del scrollbar */
+}
+
+
+
+
+
+
+
+

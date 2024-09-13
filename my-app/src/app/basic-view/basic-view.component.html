@@ -1,0 +1,154 @@
+<div class="row align-items-md-stretch p-2 ">
+    <!-- Formulafio de adicion de empleados -->
+    <div class="col-md-4">
+        <div class=" w-80 p-4 text-bg-dark rounded-3 form-task">
+            <h2>
+            @if (isEdit){
+                Edit
+            }
+            @else{
+                Add
+            }
+            Task</h2>
+            <form class="mt-3 w-70" action="" method="post">
+            <!-- Campo para el título de la tarea -->
+            <input 
+              [(ngModel)]="selectedTask.title" 
+              name="title" 
+              class="form-control mb-3 inp " 
+              type="text" 
+              placeholder="Title" 
+              aria-label="Title input">
+            
+            <!-- Campo para la descripción de la tarea (textarea) -->
+            <textarea 
+              [(ngModel)]="selectedTask.description" 
+              name="description" 
+              class="form-control mb-3 inp " 
+              placeholder="Description" 
+              rows="4" 
+              aria-label="Description input">
+            </textarea>
+          
+            <!-- Selector para la prioridad de la tarea -->
+            <div class="priority-selector">
+                <h5 class="prioriti">Priority</h5>
+                <div class="form-check-inline">
+                    <input 
+                        class="form-check-input" 
+                        type="radio" 
+                        name="priority" 
+                        value="High" 
+                        id="priorityHigh" 
+                        [(ngModel)]="selectedTask.priority">
+                    <label class="form-check-label" for="priorityHigh">
+                        High
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <input 
+                        class="form-check-input" 
+                        type="radio" 
+                        name="priority" 
+                        value="Medium" 
+                        id="priorityMedium" 
+                        [(ngModel)]="selectedTask.priority">
+                    <label class="form-check-label" for="priorityMedium">
+                        Medium
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <input 
+                        class="form-check-input" 
+                        type="radio" 
+                        name="priority" 
+                        value="Low" 
+                        id="priorityLow" 
+                        [(ngModel)]="selectedTask.priority">
+                    <label class="form-check-label" for="priorityLow">
+                        Low
+                    </label>
+                </div>
+            </div>
+
+            <!-- Botón para agregar o editar tarea -->
+            <button 
+              (click)="addOrEdit()" 
+              [ngClass]="{'btn_edit': isEdit, 'btn_add': !isEdit}" 
+              type="button" 
+              class="btn btn-primary ">
+              {{ isEdit ? 'Edit' : 'Add' }}  
+            </button>
+          
+            <!-- Botón para eliminar tarea, visible solo si se está editando -->
+            
+
+            <button 
+              *ngIf="isEdit" 
+              (click)="clearSelectedTask()" 
+              type="button" 
+              class="btn border-0 btn_add_edit text-white m-2">
+              Add  
+            </button>
+          </form>
+          
+        </div>
+    </div>
+
+    <!-- Filtro de búsqueda de tareas -->
+    <div class="col-md-8">
+        <div class=" w-80 p-4 text-bg-dark rounded-3  task-list">
+        <!-- Campo de búsqueda para filtrar tareas por título -->
+        <form class="row">
+            <div class="col-md-3">
+                <h2>Task List</h2>
+            </div>
+            
+        </form>
+        @if(taskArray.length==0){
+            <div class="empty-alert">
+                <h1>👻</h1>
+                <h2>there are currently no scheduled tasks </h2>
+            </div>
+        }@else{
+            <!-- Lista de tareas mostradas, filtradas o completas -->
+            <div class="row row-cols-1 row-cols-lg-2 align-items-stretch w-70 task-list-container">
+                <div 
+                *ngFor="let task of (isFilter ? filteredTasks : taskArray)"
+                [ngClass]="{ 'selected': selectedTask === task }"
+                class="col item_task p-4">
+                    <h5>{{task.title}}</h5>
+                    <h6 class="description-text">{{task.description}}</h6>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <small class="d-block text-secondary">
+                                Priority: {{task.priority}} 
+                            </small>
+                        </div>
+                        <div class="col-md-2">
+                            <i 
+                            (click)="openForEdit(task)"
+                            class="bi bi-pencil icon_btn_edit"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <i 
+                            (click)="delete(task)" 
+                            class="bi bi-trash3  icon_btn_delete"></i>
+                        </div>
+                    </div>
+                    
+                    <div 
+                        class="check-task" 
+                        [ngClass]="{ 'task-completed': task.complete, 'task-not-completed': !task.complete }"
+                        (click)="toggleCompletion(task)">
+                        <i class="bi bi-check-lg"></i>
+                    </div>
+                </div>
+            </div>
+            }
+        
+        </div>
+    </div>
+  
+
+</div> 

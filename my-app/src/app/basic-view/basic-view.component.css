@@ -1,0 +1,184 @@
+body.basic-view-background {
+    background: #7b4397;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #dc2430, #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn_add{
+    background: #7b4397;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #dc2430, #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.btn_edit{
+    background: #00F260;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.icon_btn_edit{
+    color:#0575E6;
+}
+.icon_btn_delete{
+    color: #ED213A;
+}
+.btn_delete{
+    background: #ED213A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.btn_add_edit{
+    background: #8360c3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.item_employe {
+    border: 2px ;
+    border-radius: 20px;
+}
+
+.item_task{
+    position: relative;
+}
+
+.selected, .item_employe:hover{
+    background: #2a2938;  /* fallback for old browsers */
+    border: 3px solid #742fa3;
+}
+
+.description-text {
+    font-size: 0.9rem; /* Tamaño de letra más pequeño que el título */
+    color: #b7b7b7;    /* Color diferente, un gris claro por ejemplo */
+    margin-top: 5px;   /* Espaciado opcional entre título y descripción */
+}
+
+.inp {
+    background-color: #3c343492;
+    color: aliceblue;
+    border: 2px solid #343333;
+}
+
+/* Estilo para los placeholders */
+.inp::placeholder {
+    color: #b0b0b0; /* Color gris claro para el placeholder */
+    opacity: 1; /* Asegura que el placeholder sea completamente visible */
+}
+
+/* Evitar el foco visual al hacer clic */
+.inp:focus {
+    outline: none; /* Elimina el borde por defecto cuando el input está enfocado */
+    box-shadow: none; /* Evita sombras en algunos navegadores */
+}
+
+/* Estilo para la opción seleccionada por defecto */
+.inp option:disabled {
+    color: #b0b0b0; /* Color gris claro para la opción no seleccionable */
+    background-color: #383a38; /* Fondo que coincide con el select */
+}
+
+
+/* Estilo para el contenedor del selector de prioridad */
+.priority-selector {
+    margin-bottom: 1rem; /* Espacio abajo del selector */
+}
+
+/* Estilo para los checkboxes en línea */
+.form-check-inline {
+    display: inline-block;
+    margin-right: 1rem; /* Espacio entre los checkboxes */
+}
+
+/* Asegurarse de que el título esté encima de los checkboxes */
+.priority-selector h5 {
+    margin-bottom: 0.5rem; /* Espacio entre el título y los checkboxes */
+}
+
+.prioriti{
+    color: #b0b0b0;
+    left: 7px;
+    font-size: 23px;
+}
+
+.cpl{
+    border: 0;
+    text-align: center;
+}
+.cpl-success{
+    background-color: #00F260;
+} 
+.cpl-secondary{
+    background-color: #514f4f;
+}
+
+
+
+.task-list-container {
+    height: 90%; 
+    overflow-y: auto;  
+}
+
+.form-task{
+    height: 400px;
+}
+.task-list{
+    height: 510px;
+}
+
+.check-task {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #514f4f;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: transparent; /* El ícono es invisible por defecto */
+}
+
+/* Estado cuando la tarea no está completada */
+.task-not-completed {
+    background-color: transparent;
+    border-color: #514f4f;
+}
+
+/* Estado cuando la tarea está completada */
+.task-completed {
+    background-color: #00F260;
+    border-color: #00F260;
+    color: white; /* El ícono se vuelve visible y blanco al estar completado */
+}
+
+/* Hover sobre el check */
+.check-task:hover {
+    border-color: #00F260; /* Cambia el borde al hacer hover */
+    color: #00F260; /* Cambia el color del ícono al color del borde */
+}
+
+/* Cambia el color del borde al hacer hover cuando no está completado */
+.task-not-completed:hover {
+    background-color: transparent; /* Mantiene el fondo transparente */
+}
+
+
+.empty-alert {
+    /* Centrar el div en el contenedor */
+    margin-top: 20%;
+    text-align: center;
+}
+
+.empty-alert h1 {
+    font-size: 6rem;  /* Tamaño más grande para el emoji */
+    margin: 0;        /* Elimina márgenes si es necesario */
+}
+
+.empty-alert h2 {
+    font-size: 1.5rem; /* Ajusta el tamaño del texto del subtítulo */
+    color: #626562;
+}
